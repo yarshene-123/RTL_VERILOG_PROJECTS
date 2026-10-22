@@ -1,0 +1,46 @@
+
+# TMR Self-Healing Digital System
+
+## Overview
+This project demonstrates Triple Modular Redundancy (TMR)
+using Verilog HDL. Three logic outputs are combined using
+a majority voter to tolerate a single faulty output.
+
+## Objective
+To demonstrate fault masking in a digital circuit using
+redundant logic modules and majority voting.
+
+## Architecture
+- Logic Module 1
+- Logic Module 2
+- Logic Module 3
+- Majority Voter
+- Fault Injection Signal
+
+## Working Principle
+Three logic modules perform the same AND operation.
+The majority voter produces the value agreed upon by at
+least two modules.
+
+A fault signal can invert the third module's output.
+When the other two modules agree, the voter can preserve
+the correct output.
+
+## Tools
+- Verilog HDL
+- EDA Playground
+- Icarus Verilog
+- GitHub
+
+## Files
+- TMR_Healing_System.v - RTL design
+- TMR_Healing_System_tb.v - Simulation testbench
+
+## Current Status
+Initial RTL prototype and basic fault-injection
+simulation completed.
+
+## Future Improvements
+- Test faults in each of the three modules.
+- Add automated testbench checks.
+- Explore recovery and fault monitoring mechanisms.
