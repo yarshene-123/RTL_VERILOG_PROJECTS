@@ -36,15 +36,18 @@ Input
 - TMR_Healing_System_tb.v - Testbench
 - TMR_README.md - Project documentation
 
-## Verification
-The initial simulation passed seven checks, including
-normal inputs and a single injected fault in each module.
+##Verification
 
-## Limitations
-The current design masks a single faulty output but does
-not physically repair or replace a faulty module.
-Multiple simultaneous faults may cause an incorrect
-output.
+- Tested all four input combinations for the AND logic.
+- Tested a single injected fault in each of the three modules.
+- Added a two-fault test to demonstrate the limitation of majority voting.
+- A single faulty module is masked, while two faulty modules can cause an incorrect output.
+
+##Limitations
+
+- The design tolerates a single faulty module under the tested conditions.
+- Two simultaneous faults can cause an incorrect output.
+- The design masks faults but does not physically repair a faulty module.
 
 ## Future Improvements
 - Expand automated test coverage.
