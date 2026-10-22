@@ -1,46 +1,53 @@
 
 # TMR Self-Healing Digital System
 
-## Overview
+## Project Overview
 This project demonstrates Triple Modular Redundancy (TMR)
-using Verilog HDL. Three logic outputs are combined using
-a majority voter to tolerate a single faulty output.
+using Verilog HDL. It uses three copies of a logic module
+and a majority voter to tolerate a single faulty output.
 
 ## Objective
-To demonstrate fault masking in a digital circuit using
-redundant logic modules and majority voting.
+To design and simulate a fault-tolerant digital circuit
+that maintains its correct output when one module fails.
 
-## Architecture
-- Logic Module 1
-- Logic Module 2
-- Logic Module 3
-- Majority Voter
-- Fault Injection Signal
+## Block Diagram
+Input
+  |
+  +--> Logic Module 1 --+
+  +--> Logic Module 2 --+--> Majority Voter --> Output
+  +--> Logic Module 3 --+
 
 ## Working Principle
-Three logic modules perform the same AND operation.
-The majority voter produces the value agreed upon by at
-least two modules.
+1. Three logic modules perform the same AND operation.
+2. Each module produces an output.
+3. A majority voter selects the value agreed upon by at
+   least two outputs.
+4. Fault-injection signals can invert individual outputs
+   to demonstrate fault masking.
 
-A fault signal can invert the third module's output.
-When the other two modules agree, the voter can preserve
-the correct output.
-
-## Tools
+## Technologies Used
 - Verilog HDL
-- EDA Playground
 - Icarus Verilog
+- EDA Playground
 - GitHub
 
-## Files
+## Project Files
 - TMR_Healing_System.v - RTL design
-- TMR_Healing_System_tb.v - Simulation testbench
+- TMR_Healing_System_tb.v - Testbench
+- TMR_README.md - Project documentation
 
-## Current Status
-Initial RTL prototype and basic fault-injection
-simulation completed.
+## Verification
+The initial simulation passed seven checks, including
+normal inputs and a single injected fault in each module.
+
+## Limitations
+The current design masks a single faulty output but does
+not physically repair or replace a faulty module.
+Multiple simultaneous faults may cause an incorrect
+output.
 
 ## Future Improvements
-- Test faults in each of the three modules.
-- Add automated testbench checks.
-- Explore recovery and fault monitoring mechanisms.
+- Expand automated test coverage.
+- Add fault detection and recovery logic.
+- Explore timing and reliability analysis.
+
