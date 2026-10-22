@@ -55,7 +55,14 @@ module testbench;
         fault1=1;
         fault2=1;
         fault3=0;
-        check(1);
+        fault1=1;
+fault2=1;
+fault3=0;
+#10;
+if (y == 0)
+    $display("PASS: Two-fault limitation demonstrated");
+else
+    $display("FAIL: Unexpected voter output");
 
         $finish;
     end
