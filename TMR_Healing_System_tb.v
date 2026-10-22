@@ -51,6 +51,11 @@ module testbench;
         // Inject a fault into module 3
         fault2=0; fault3=1;
         check(1);
+                // Two modules faulty: demonstrates TMR limitation
+        fault1=1;
+        fault2=1;
+        fault3=0;
+        check(1);
 
         $finish;
     end
